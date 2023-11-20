@@ -50,6 +50,7 @@ public class HttpRequestLoggerServer {
             System.out.println(new String(exchange.getRequestBody().readAllBytes()));
             System.out.println("=============");
             exchange.sendResponseHeaders(200, 0);
+            exchange.getResponseBody().close();
         }
     }
 
